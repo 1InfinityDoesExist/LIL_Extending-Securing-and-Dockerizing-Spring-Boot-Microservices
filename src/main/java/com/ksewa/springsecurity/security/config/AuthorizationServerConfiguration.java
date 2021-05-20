@@ -1,6 +1,7 @@
-package com.linkedInLearning.springsecurity.config;
+package com.ksewa.springsecurity.security.config;
 
 import java.security.KeyPair;
+import java.security.KeyPairGenerator;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.Certificate;
@@ -65,17 +66,6 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 				.tokenKeyAccess("isAuthenticated()");
 	}
 
-	/**
-	 * scopes are defined by OAuth2. It is intended to define what the end-user
-	 * allowed each client to do on its behalf (information from
-	 * authorization-server to resource-servers).
-	 * 
-	 * Consider this, a user authorizes Twitter to post a user's tweet to Facebook.
-	 * In this case, Twitter will have a scope write_facebook_status. Although user
-	 * has authority to change it's own profile but this doesn't mean that Twitter
-	 * can also change user's profile. In other words, scope are client
-	 * authorities/roles and it's not the User's authorities/roles.
-	 */
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 		clients.inMemory().withClient("client").secret("secret").scopes("READ_ALL_GUEST", "UPDATE_GUEST", "WRITE_GUEST")
@@ -114,17 +104,18 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 		return keyPairFactory.getKeyPair("ssia");
 	}
 
-//	private KeyPair keyPair() {
-//		KeyPair keyPair = null;
-//		try {
-//			KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
-//			keyPairGenerator.initialize(2048);
-//			keyPair = keyPairGenerator.generateKeyPair();
-//		} catch (final NoSuchAlgorithmException e) {
-//			log.debug("Failed to generate keyPair");
-//		}
-//		return keyPair;
-//	}
+	@SuppressWarnings("unused")
+	private KeyPair spareKeyPair() {
+		KeyPair keyPair = null;
+		try {
+			KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
+			keyPairGenerator.initialize(2048);
+			keyPair = keyPairGenerator.generateKeyPair();
+		} catch (final NoSuchAlgorithmException e) {
+			log.debug("Failed to generate keyPair");
+		}
+		return keyPair;
+	}
 
 	@Bean
 	public JWKSet jwkSet() throws Exception {

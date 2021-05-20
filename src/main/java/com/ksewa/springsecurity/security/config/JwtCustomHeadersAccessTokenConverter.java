@@ -1,4 +1,4 @@
-package com.linkedInLearning.springsecurity.config;
+package com.ksewa.springsecurity.security.config;
 
 import java.security.KeyPair;
 import java.security.interfaces.RSAPrivateKey;

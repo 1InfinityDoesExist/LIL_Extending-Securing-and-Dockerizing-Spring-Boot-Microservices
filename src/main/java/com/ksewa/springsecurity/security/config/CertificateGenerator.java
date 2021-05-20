@@ -1,4 +1,4 @@
-package com.linkedInLearning.springsecurity.config;
+package com.ksewa.springsecurity.security.config;
 
 import java.math.BigInteger;
 import java.security.KeyPair;
@@ -23,6 +23,11 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class CertificateGenerator {
+
+	private CertificateGenerator() {
+
+	}
+
 	public static Certificate generateCertificate(KeyPair keyPair)
 			throws CertificateException, OperatorCreationException {
 		X500Name x500Name = new X500Name("CN=***.com, OU=Security&Defense, O=*** Crypto., L=Ottawa, ST=Ontario, C=CA");
