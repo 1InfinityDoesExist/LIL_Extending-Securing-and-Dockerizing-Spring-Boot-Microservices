@@ -1,4 +1,4 @@
-package com.linkedInLearning.springsecurity.config;
+package com.ksewa.springsecurity.security.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

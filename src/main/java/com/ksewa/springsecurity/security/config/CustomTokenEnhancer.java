@@ -1,4 +1,4 @@
-package com.linkedInLearning.springsecurity.config;
+package com.ksewa.springsecurity.security.config;
 
 import java.util.HashMap;
 import java.util.Map;

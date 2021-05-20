@@ -1,4 +1,4 @@
-package com.linkedInLearning.springsecurity.controller;
+package com.ksewa.springsecurity.security.controller;
 
 import java.util.Map;
 
