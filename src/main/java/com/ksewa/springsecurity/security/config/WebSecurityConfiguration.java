@@ -41,8 +41,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.httpBasic().and().authorizeRequests().antMatchers("/.well-known/jwks.json/**").permitAll().anyRequest()
-				.authenticated().and().csrf().disable();
+		http.httpBasic().and().authorizeRequests().antMatchers("/.well-known/jwks.json/**", "/api/v1/sms").permitAll()
+				.anyRequest().authenticated().and().csrf().disable();
 
 	}
 
