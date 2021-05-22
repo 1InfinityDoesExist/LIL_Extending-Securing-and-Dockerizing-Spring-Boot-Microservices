@@ -22,8 +22,8 @@ public class OTPDetails implements Serializable {
 	private String id;
 	private String mobile;
 	private String email;
-	private String emailOTP;
-	private String mobileOTP;
+	private Integer emailOTP;
+	private Integer mobileOTP;
 	private boolean isEmailVerified;
 	private boolean isMobileVerified;
 	private Date emailOtpExpiryDate;
